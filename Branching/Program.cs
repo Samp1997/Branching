@@ -24,13 +24,14 @@ namespace Branching
             
             
 
-            if (packageWeight == weightMax)
+            if (packageWeight <= weightMax)
             {
                 Console.WriteLine("Package is good to send.");
             }
             else if (packageWeight > weightMax)
             {
                 Console.WriteLine("Package too heavy to be shipped via Package Express. Have a good day");
+                
 
             }
             Console.WriteLine( name + "  what is the width of this package?");
@@ -53,8 +54,12 @@ namespace Branching
             {
                 Console.WriteLine("Package too heavy to be shipped via Package Express. Have a good day");
             }
+            if (packageWidth + packageHeight + packageLength > 50)
+            {
+                Console.WriteLine("Package is too big");
+            }
 
-            Console.WriteLine("Your estimated total for shipping this package is:" + packageHeight * packageWeight * packageLength + "$");
+            Console.WriteLine("Your estimated total for shipping this package is:" + packageHeight * packageWidth * packageWeight * packageLength + "$");
 
 
             
